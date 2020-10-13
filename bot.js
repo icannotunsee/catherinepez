@@ -16,7 +16,7 @@ client.on('ready', () => {
     }
   });
 
-  client.om('message', message => {
+  client.on('message', message => {
       const args = message.content.split(" ").slice(1);
    if(message.content.toLowerCase().startsWith(PREFIX + 'slowmode')) {
     var str = message.content.split(prefix + 'slowmode ');
