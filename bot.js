@@ -16,5 +16,13 @@ client.on('ready', () => {
     }
   });
 
+if (message.content.toLowerCase().startsWith(PREFIX + 'slowmode')) {
+    var str = message.content.split(prefix + 'slowmode ');
+    var num = parseInt(str[1], 10);
+    message.channel.setRateLimitPerUser(num).then(() => {
+        message.channel.send(`slowmode set to ${num}s.`);
+    });
+}
+
 
   client.login(process.env.BOT_TOKEN);
