@@ -23,8 +23,9 @@ client.on('ready', () => {
          var num = parseInt(str[1], 10);
          message.channel.setRateLimitPerUser(num).then(() => {
          message.channel.send(`slowmode set to ${num}s.`);
+   )}
   });
-     }
+         
 }
 
 
