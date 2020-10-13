@@ -17,14 +17,14 @@ client.on('ready', () => {
   });
 
   client.on('message', message => {
-      const args = message.content.split(" ").slice(1);
-   if(message.content.toLowerCase().startsWith(PREFIX + 'slowmode')) {
-    var str = message.content.split(prefix + 'slowmode ');
-    var num = parseInt(str[1], 10);
-    message.channel.setRateLimitPerUser(num).then() => {
-        message.channel.send(`slowmode set to ${num}s.`);
+     const args = message.content.split(" ").slice(1);
+     if(message.content.toLowerCase().startsWith(PREFIX + 'slowmode')) {
+         var str = message.content.split(prefix + 'slowmode ');
+         var num = parseInt(str[1], 10);
+         message.channel.setRateLimitPerUser(num).then() => {
+         message.channel.send(`slowmode set to ${num}s.`);
     }
-  });
+     }});
 }
 
 
