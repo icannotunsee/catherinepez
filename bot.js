@@ -25,8 +25,5 @@ client.on('ready', () => {
          message.channel.send(`slowmode set to ${num}s.`);
     })
   });
-         
-}
-
 
   client.login(process.env.BOT_TOKEN);
