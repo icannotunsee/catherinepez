@@ -16,5 +16,26 @@ client.on('ready', () => {
     }
   });
 
+client.on('message', msg => {
+    if (msg.content === 'mod abuse') {
+      msg.reply('use <#751881836455657533> to report a mod.');
+      msg.delete()
+    }
+  });
+
+client.on('message', msg => {
+    if (msg.content === 'admin abuse') {
+      msg.reply('use <#751881836455657533> to report an admin.');
+      msg.delete()
+    }
+  });
+
+
+client.on('message', msg => {
+    if (msg.content === 'staff abuse') {
+      msg.reply('use <#751881836455657533> to report staff.');
+      msg.delete()
+    }
+  });
 
   client.login(process.env.BOT_TOKEN);
