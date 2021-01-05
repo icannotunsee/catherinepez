@@ -49,11 +49,23 @@ async function quote(msg) {
   }  
     
  client.on('message', message => {
+    const CHANNEL = 'queensguard';
     const args = message.content.split(" ").slice(1);
     if(message.content.toLowerCase() === "dyke") {
         message.delete()
         message.reply("no derogatory slurs here.");
-        quote(message);
+        var logger = message.guild.channels.find(
+        channel => channel.name === CHANNEL
+    );
+        if (logger) {
+         const embed = new Discord.RichEmbed()
+          .setTitle('slur used')
+          .addField('Author', message.author.username)
+          .addField('Message', message.cleanContent)
+          .setThumbnail(message.author.avatarURL)
+          .setColor('0x00AAFF');
+         logger.send({ embed });
+       }
     }
   });
 
