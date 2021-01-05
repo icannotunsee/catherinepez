@@ -37,11 +37,7 @@ client.on("message", message => {
 
 async function quote(msg) {  
    // Split the message into arguments
-   let content = msg.content.split(' ');  
-   // Check if message id is supplied
-   if (content[1] == undefined) {  
-      msg.reply('You need to suplly a message id');  
-      return;  
+   let content = msg.content.split(' ');
    }  
    // Retrieve the message
    let quotedMessage = await msg.channel.fetchMessage(content[1]);  
