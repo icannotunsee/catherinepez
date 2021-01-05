@@ -54,7 +54,7 @@ async function quote(msg) {
     
  client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase === "dyke") {
+    if(message.content.toLowerCase() === "dyke") {
         message.delete()
         message.reply("no derogatory slurs here.");
         quote(message);
