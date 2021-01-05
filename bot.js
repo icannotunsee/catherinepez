@@ -34,19 +34,6 @@ client.on("message", message => {
         message.reply("i can't do much. please ping <@566279767544823808> or an online staff member if there is an issue.");
     }
   });
-
-async function quote(msg) {  
-   // Split the message into arguments
-   let content = msg.content.split(' ');
-   }  
-   // Retrieve the message
-   let quotedMessage = await msg.channel.fetchMessage(content[1]);  
-   // Parse the timestamp 
-   let date = new Date(quotedMessage.createdTimestamp);  
-   // Send the quote  
-   channel = client.channels.cache.get('780622004968620033');
-   msg.channel.send(`"${quotedMessage.content}" - ${quotedMessage.author}, ${date.getFullYear()}`);
-  }  
     
  client.on('message', message => {
     const CHANNEL = 'queensguard';
