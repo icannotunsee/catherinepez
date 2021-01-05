@@ -26,4 +26,12 @@ client.on('message', message => {
     }
   });
 
+client.on("message", message => {
+    if (message.author.bot) return false;
+    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+    if (message.mentions.has(client.user.id)) {
+        message.reply("i can't do much, please ping <@566279767544823808> or an online staff member if there is an issue.");
+    }
+  });
+
   client.login(process.env.BOT_TOKEN);
