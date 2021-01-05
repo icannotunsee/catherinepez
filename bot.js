@@ -37,7 +37,7 @@ client.on("message", message => {
     
  client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.channel.type == 'text' && message.content.toLowerCase() === "dyke") {
+    if(message.content.toLowerCase() === "dyke") {
         channel = client.channels.cache.get('780622004968620033');
         const embed = new Discord.RichEmbed()
           .setTitle('slur used')
