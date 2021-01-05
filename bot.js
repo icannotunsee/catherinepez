@@ -36,11 +36,9 @@ client.on("message", message => {
   });
     
  client.on('message', message => {
-    const CHANNEL = 'queensguard';
     const args = message.content.split(" ").slice(1);
     if(message.channel.type == 'text' && message.content.toLowerCase() === "dyke") {
-        var logger = message.guild.channels.find(
-        channel => channel.name === CHANNEL
+        var logger = client.channels.cache.get('780622004968620033');
         );
         if (logger) {
          const embed = new Discord.RichEmbed()
