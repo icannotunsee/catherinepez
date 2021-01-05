@@ -21,7 +21,7 @@ client.on('message', message => {
   if(message.content.startsWith('d!announce') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       message.delete()
       var saytext = args.join(" ");
-      channel = client.channels.cache.get('780917089066025020');
+      channel = client.channels.cache.get('780671823611428905');
       channel.send(saytext);
     }
   });
