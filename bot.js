@@ -38,17 +38,14 @@ client.on("message", message => {
  client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.channel.type == 'text' && message.content.toLowerCase() === "dyke") {
-        var logger = client.channels.cache.get('780622004968620033');
-        );
-        if (logger) {
-         const embed = new Discord.RichEmbed()
+        channel = client.channels.cache.get('780622004968620033');
+        const embed = new Discord.RichEmbed()
           .setTitle('slur used')
           .addField('Author', message.author.username)
           .addField('Message', message.cleanContent)
           .setThumbnail(message.author.avatarURL)
           .setColor('0x00AAFF');
-         logger.send({ embed });
-        }
+        channel.send({ embed });
         message.delete()
         message.reply("no derogatory slurs here.");
     }
