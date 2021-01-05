@@ -38,12 +38,10 @@ client.on("message", message => {
  client.on('message', message => {
     const CHANNEL = 'queensguard';
     const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase() === "dyke") {
-        message.delete()
-        message.reply("no derogatory slurs here.");
+    if(message.channel.type == 'text' && message.content.toLowerCase() === "dyke") {
         var logger = message.guild.channels.find(
         channel => channel.name === CHANNEL
-    );
+        );
         if (logger) {
          const embed = new Discord.RichEmbed()
           .setTitle('slur used')
@@ -52,7 +50,9 @@ client.on("message", message => {
           .setThumbnail(message.author.avatarURL)
           .setColor('0x00AAFF');
          logger.send({ embed });
-       }
+        }
+        message.delete()
+        message.reply("no derogatory slurs here.");
     }
   });
 
