@@ -35,4 +35,16 @@ client.on("message", message => {
     }
   });
 
+client.on('message', message => {
+  if (message.content === "!av") {
+    const embed = new RichEmbed()
+    .setTitle('Avatar!')
+    .setAuthor("Your Avatar", message.author.avatarURL)
+    .setImage(message.author.avatarURL)
+    .setColor('RANDOM')
+    .setDescription('Avatar URL')
+   message.reply(embed)
+  }
+});
+
   client.login(process.env.BOT_TOKEN);
