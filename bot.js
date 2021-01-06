@@ -12,11 +12,10 @@ client.on('ready', () => {
 client.on('messageReactionAdd', (reaction, user) => {
         let msg = reaction.message, emoji = reaction.emoji;
     
-        if (emoji.id == '<a:GK_rotatingcrown:780890745678463046>') {
-                msg.guild.fetchMember(user.id).then(member => {
+        if (emoji.id === '<a:GK_rotatingcrown:780890745678463046>') {
+                        let member = msg.guild.fetchMember(user.id);
                         let channel = client.channels.cache.get('780601741614776330');
                         channel.send(`${member} welcome to the server <3`);
-                });
         }
 });
 
