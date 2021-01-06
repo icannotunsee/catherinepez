@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { Client, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -35,12 +36,27 @@ client.on("message", message => {
     }
   });
     
- client.on('message', message => {
+client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase() === "dyke") {
-        message.delete()
-        message.reply("no derogatory slurs here.");
+    if(message.content.toLowerCase().includes("dyke")) {
+       let badMsg = message.content;
+       let badMsgChan = message.guild.channels.cache.get(message.channel.id);
+       let badMsgUser = message.author;
+       let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+
+       let emb = new Discord.MessageEmbed()
+          .setTitle("blacklisted word used")
+          .addField("content", badMsg, true)
+          .addField("found in", badMsgChan, true)
+          .addField("written by", badMsgUser, true)
+          .setTimestamp()
+
+       logChan.send(emb);
+
+       message.delete();
+       message.reply("no derogatory words.");
     }
   });
+
 
   client.login(process.env.BOT_TOKEN);
