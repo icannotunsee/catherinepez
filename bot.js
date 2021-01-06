@@ -5,18 +5,6 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
-    client.guilds.get('780596354661351434').channels.get('780600319834980403').fetchMessage('780887860554760201');
-
-});
-
-client.on('messageReactionAdd', (reaction, user) => {
-        let msg = reaction.message, emoji = reaction.emoji;
-    
-        if (emoji.name == 'GK_rotatingcrown') {
-                        let member = msg.guild.fetchMember(user.id);
-                        let channel = client.channels.cache.get('780601741614776330');
-                        message.channel.send(`${member} welcome to the server <3`);
-        }
 });
 
 
