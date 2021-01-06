@@ -55,7 +55,7 @@ client.on('message', message => {
           .setTitle("blacklisted word used")
           .addField("content", badMsg, true)
           .addField("found in", badMsgChan, true)
-          .addField("written by", badMsgUser, true)
+          .addField("sent by", badMsgUser, true)
           .setTimestamp()
 
        logChan.send(log);
@@ -77,5 +77,27 @@ client.on('message', message => {
       message.delete();
   }
 });
+
+client.on('message', (message) => {
+  if (message.content.includes('discord.gg/'||'discordapp.com/invite/')) {
+          let badMsg = message.content;
+          let badMsgChan = message.guild.channels.cache.get(message.channel.id);
+          let badMsgUser = message.author;
+          let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+
+          let log = new Discord.MessageEmbed()
+            .setColor('#ff3a71')
+            .setTitle("invite link")
+            .addField("content", badMsg, true)
+            .addField("found in", badMsgChan, true)
+            .addField("sent by", badMsgUser, true)
+            .setTimestamp()
+
+       logChan.send(log);
+
+       message.delete();
+       message.reply("no invite links here.");
+  }
+})
 
   client.login(process.env.BOT_TOKEN);
