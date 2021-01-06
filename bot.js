@@ -66,8 +66,9 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-  const args = message.content.replace('!embed', '').split(' ');
+  const args = message.content.split(" ").slice(1);
   if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      args = message.content.replace('!embed', '').split(' ')
       let desc = message.content;
       let embed = new Discord.MessageEmbed()
           .setColor('#FFBCC9')
