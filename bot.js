@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.id === '<a:GK_rotatingcrown:780890745678463046>' && message.channel.name === 'sign') {
         channel = client.channels.cache.get('780601741614776330');
-        message.channel.reply("welcome to the server!");
+        message.member.channel.reply("welcome to the server!");
     }
 });
 
