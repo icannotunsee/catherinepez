@@ -38,7 +38,10 @@ client.on("message", message => {
     
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase().includes("dyke" || "badword")) {
+    if(message.content.toLowerCase().includes("dyke") || message.content.toLowerCase().includes("nigga") || message.content.toLowerCase().includes("nigger")
+      || message.content.toLowerCase().includes("fags") || message.content.toLowerCase().includes("fag") || message.content.toLowerCase().includes("faggot")
+      || message.content.toLowerCase().includes("retard") || message.content.toLowerCase().includes("retarded") || message.content.toLowerCase().includes("chink")
+      || message.content.toLowerCase().includes("tranny") || message.content.toLowerCase().includes("fucktard")) {
        let badMsg = message.content;
        let badMsgChan = message.guild.channels.cache.get(message.channel.id);
        let badMsgUser = message.author;
