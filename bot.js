@@ -66,8 +66,8 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-  if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-      let removed = message.content.replace('!embed', '')
+  if(message.content.startsWith('!embedpic') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let removed = message.content.replace('!embedpic', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setDescription(removed)
@@ -98,6 +98,18 @@ client.on('message', (message) => {
        message.delete();
        message.reply("no invite links here.");
   }
-})
+});
+
+client.on('message', message => {
+  if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let removed = message.content.replace('!embed', '')
+      let emb = new MessageEmbed()
+          .setColor('#FFBCC9')
+          .setDescription(removed)
+      
+      message.channel.send(emb);
+      message.delete();
+  }
+});
 
   client.login(process.env.BOT_TOKEN);
