@@ -45,7 +45,7 @@ client.on('message', message => {
        let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
 
        let emb = new Discord.MessageEmbed()
-          .setColor(ff3a71)
+          .setColor('#ff3a71')
           .setTitle("blacklisted word used")
           .addField("content", badMsg, true)
           .addField("found in", badMsgChan, true)
