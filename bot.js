@@ -7,10 +7,14 @@ client.on('ready', () => {
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
 
+client.on('ready', () => {
+        client.guilds.get('780596354661351434').channels.get('780600319834980403').fetchMessage('780887860554760201');
+});
+
 client.on('messageReactionAdd', (reaction, user) => {
         let message = reaction.message, emoji = reaction.emoji;
 
-        if ((emoji.name == '<a:GK_rotatingcrown:780890745678463046>') && (message.channel.id === '780600319834980403')) {
+        if (emoji.name == '<a:GK_rotatingcrown:780890745678463046>') {
                 message.guild.fetchMember(user.id).then(member => {
                         member.send("thanks for signing the rules. you can now access the server!");
                 });
