@@ -13,10 +13,10 @@ client.on('ready', () => {
 
 client.on('messageReactionAdd', (reaction, user) => {
         let message = reaction.message, emoji = reaction.emoji;
-
+        let channel = client.channels.cache.get('780601741614776330')
         if (emoji.name == '<a:GK_rotatingcrown:780890745678463046>') {
                 message.guild.fetchMember(user.id).then(member => {
-                        member.send("thanks for signing the rules. you can now access the server!");
+                        message.channel.send("${member} welcome to the server <3");
                 });
         }
 });
