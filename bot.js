@@ -67,7 +67,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-      let removed = message.content.replace('!embed', '').split(' ')
+      let removed = message.content.replace('!embed', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setDescription(removed)
