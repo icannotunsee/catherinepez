@@ -68,12 +68,13 @@ client.on('message', message => {
 client.on('message', message => {
   const args = message.content.split(" ").slice(1);
   if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let desc = message.content;
       let embed = new Discord.MessageEmbed()
           .setColor('#FFBCC9')
-          .setDescription(message.content)
+          .setDescription(desc)
           .setThumbnail('https://i.imgur.com/x5d9Qwq.jpg')
       
-      channel.send(embed);
+      message.channel.send(embed);
       message.delete();
   }
 });
