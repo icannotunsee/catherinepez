@@ -8,12 +8,15 @@ client.on('ready', () => {
 });
 
 client.on('messageReactionAdd', (reaction, user) => {
-    if(user.id !== bot.user.id) {
-        if(reaction.message.id === '780887860554760201') {
-            user.send("thanks for signing the rules. you can now access the server!");
+        let message = reaction.message, emoji = reaction.emoji;
+
+        if ((emoji.name == '<a:GK_rotatingcrown:780890745678463046>') && (message.channel.id === '780600319834980403')) {
+                message.guild.fetchMember(user.id).then(member => {
+                        member.send("thanks for signing the rules. you can now access the server!");
+                });
         }
-    }
 });
+
 
   client.on('message', message => {
     const args = message.content.split(" ").slice(1);
