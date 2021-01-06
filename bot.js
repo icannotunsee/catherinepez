@@ -39,14 +39,6 @@ client.on("message", message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.toLowerCase() === "dyke") {
         message.delete()
-        const embed = new Discord.RichEmbed()
-          .setTitle('slur used')
-          .addField('Author', message.author.username)
-          .addField('Message', message.cleanContent)
-          .setThumbnail(message.author.avatarURL)
-          .setColor('0x00AAFF');
-        channel = client.channels.cache.get('780622004968620033');
-        channel.send({ embed });
         message.reply("no derogatory slurs here.");
     }
   });
