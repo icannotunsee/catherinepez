@@ -50,7 +50,7 @@ client.on('message', message => {
        let badMsgUser = message.author;
        let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
 
-       let emb = new Discord.MessageEmbed()
+       let log = new Discord.MessageEmbed()
           .setColor('#ff3a71')
           .setTitle("blacklisted word used")
           .addField("content", badMsg, true)
@@ -58,7 +58,7 @@ client.on('message', message => {
           .addField("written by", badMsgUser, true)
           .setTimestamp()
 
-       logChan.send(emb);
+       logChan.send(log);
 
        message.delete();
        message.reply("no derogatory words.");
@@ -69,12 +69,12 @@ client.on('message', message => {
   const args = message.content.split(" ").slice(1);
   if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       let removed = message.content.replace('!embed', '').split(' ')
-      let embed = new Discord.RichEmbed()
+      let emb = new Discord.RichEmbed()
           .setColor('#FFBCC9')
           .setDescription(removed)
           .setThumbnail('https://i.imgur.com/x5d9Qwq.jpg')
       
-      message.channel.send(embed);
+      message.channel.send(emb);
       message.delete();
   }
 });
