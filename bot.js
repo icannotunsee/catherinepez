@@ -14,8 +14,8 @@ client.on('messageReactionAdd', (reaction, user) => {
     
         if (emoji.name == '<a:GK_rotatingcrown:780890745678463046>') {
                 msg.guild.fetchMember(user.id).then(member => {
-                        let chan = client.channels.cache.get('780601741614776330');
-                        message.chan.send(`${member} welcome to the server <3`);
+                        let channel = client.channels.cache.get('780601741614776330');
+                        channel.send(`${member} welcome to the server <3`);
                 });
         }
 });
