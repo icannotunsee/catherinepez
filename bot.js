@@ -7,6 +7,12 @@ client.on('ready', () => {
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
 
+client.on('messageReactionAdd', async (reaction, user) => {
+    if (reaction.id === '<a:GK_rotatingcrown:780890745678463046>' && message.channel.name === 'sign') {
+        channel = client.channels.cache.get('780601741614776330');
+        message.channel.reply("welcome to the server!");
+    }
+});
 
   client.on('message', message => {
     const args = message.content.split(" ").slice(1);
