@@ -13,10 +13,11 @@ client.on('ready', () => {
 
 client.on('messageReactionAdd', (reaction, user) => {
         let msg = reaction.message, emoji = reaction.emoji;
-        let channel = client.channels.cache.get('780601741614776330')
+    
         if (emoji.name == '<a:GK_rotatingcrown:780890745678463046>') {
                 msg.guild.fetchMember(user.id).then(member => {
-                        message.channel.send(`${member} welcome to the server <3`);
+                        let chan = client.channels.cache.get('780601741614776330');
+                        message.chan.send(`${member} welcome to the server <3`);
                 });
         }
 });
@@ -24,7 +25,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 
   client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.content.startsWith('d!say') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+    if(message.content.startsWith('~say') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
         message.delete()
         var saytext = args.join(" ");
         message.channel.send(saytext);
@@ -33,7 +34,7 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 client.on('message', message => {
   const args = message.content.split(" ").slice(1);
-  if(message.content.startsWith('d!announce') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+  if(message.content.startsWith('~announce') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       message.delete()
       var saytext = args.join(" ");
       channel = client.channels.cache.get('780671823611428905');
@@ -80,8 +81,8 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-  if(message.content.startsWith('!embedpic') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-      let removed = message.content.replace('!embedpic', '')
+  if(message.content.startsWith('~embedpic') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let removed = message.content.replace('~embedpic', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setDescription(removed)
@@ -115,8 +116,8 @@ client.on('message', (message) => {
 });
 
 client.on('message', message => {
-  if(message.content.startsWith('!embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-      let removed = message.content.replace('!embed', '')
+  if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let removed = message.content.replace('~embed', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setDescription(removed)
