@@ -1,40 +1,12 @@
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
-const fs = require('fs');
+
 const client = new Discord.Client();
-
-client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
-}
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
-
-client.on("message", async message => {
-    const PREFIX = "~";
-
-    if (message.author.bot) return;
-    if (!message.guild) return;
-    if (!message.content.startsWith(PREFIX)) return;
-    if (!message.member) message.member = await message.guild.fetchMember(message);
-
-    const args = message.content.slice(PREFIX.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
-
-    if (command.length === 0) return;
-
-    let command = client.commands.get(command);
-
-    if (command) 
-        command.run(client, message, args);
-});
-
 
   client.on('message', message => {
     const args = message.content.split(" ").slice(1);
@@ -92,6 +64,18 @@ client.on('message', message => {
        message.reply("no derogatory words.");
     }
   });
+
+client.on('message', message => {
+  if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
+      let removed = message.content.replace('~embed', '')
+      let emb = new MessageEmbed()
+          .setColor('#FFBCC9')
+          .setDescription(removed)
+      
+      message.channel.send(emb);
+      message.delete();
+  }
+});
 
 client.on('message', message => {
   if(message.content.startsWith('~embedpic') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
