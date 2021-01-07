@@ -1,6 +1,15 @@
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
+const fs = require('fs');
 const client = new Discord.Client();
+
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -15,13 +24,12 @@ client.on("message", async message => {
     if (!message.content.startsWith(PREFIX)) return;
     if (!message.member) message.member = await message.guild.fetchMember(message);
 
-    const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
-    const cmd = args.shift().toLowerCase();
+    const args = message.content.slice(PREFIX.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
 
-    if (cmd.length === 0) return;
+    if (command.length === 0) return;
 
-    let command = client.commands.get(cmd);
-    if (!command) command = client.commands.get(client.aliases.get(cmd));
+    let command = client.commands.get(command);
 
     if (command) 
         command.run(client, message, args);
