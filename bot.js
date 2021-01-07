@@ -140,8 +140,7 @@ function tempmute(message, args, prefix, client) {
   	message.content.send(muteEmbed)
 
 	// You need to parse those arguments, I'll leave that to you.
-    muteUser.removeRoles(rMember.roles).then(console.log).catch(console.error);
-	muteUser.roles.add(muteRole, `muted ${muteUser} for ${minutes} minutes. reason: ${muteReason}`);
+        muteUser.removeRoles(muteUser.roles).then.muteUser.roles.add(muteRole, `muted ${muteUser} for ${minutes} minutes. reason: ${muteReason}`);
 
 	timeout(minutes, muteUser, muteRole, message) //time the mute
 }
