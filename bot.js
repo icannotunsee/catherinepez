@@ -112,4 +112,60 @@ client.on('message', message => {
   }
 });
 
+function tempmute(message, args, prefix, client) {
+    var muterolename = "prisoners";
+    var muteRole = message.guild.roles.cache.find(r => r.name === muterolename);
+    var muteUser = message.mentions.members.first();
+    var muteChannel = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+  
+	if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you do not have permissions to imprison that person.");
+	if (!muteUser) return message.reply("i don't think that person is in our kingdom.");
+	if (!muteChannel) return message.reply("wrong channel.");
+	if (!muteRole) return message.reply("there's no title called " + muterolename);
+	if (!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.reply("you do not have permissions to imprison that person.");
+
+	var prefixLength = prefix.length; //gets length of prefix
+	var minutes = args[2]; //time in minutes
+	var muteReason = message.content.slice(6 + prefixLength, prefixLength + message.content.length); //gets reason
+	if (!muteReason) var muteReason = "no reason given"; //makes reason "no reason given" if no reason is added"
+
+	var muteEmbed = new Discord.MessageEmbed()
+	muteEmbed.setTitle("prisoner seized")
+	muteEmbed.addField("prisoner", muteUser)
+	muteEmbed.addField("reason", muteReason)
+	muteEmbed.addField("minutes", minutes)
+	muteEmbed.setFooter(`guard: ${message.author.tag}`)
+	muteEmbed.setTimestamp();
+	
+  	message.content.send(muteEmbed)
+
+	// You need to parse those arguments, I'll leave that to you.
+    muteUser.removeRoles(rMember.roles).then(console.log).catch(console.error);
+	muteUser.roles.add(muteRole, `muted ${muteUser} for ${minutes} minutes. reason: ${muteReason}`);
+
+	timeout(minutes, muteUser, muteRole, message) //time the mute
+}
+
+function timeout(minutes, muteUser, mutedRole, message) {
+	setTimeout(() => {
+    muteUser.roles.remove(mutedRole, `released.`);
+
+    var muteEmbed = new Discord.MessageEmbed()
+    muteEmbed.setTitle("prison release")
+    muteEmbed.addField("prisoner", muteUser)
+    muteEmbed.addField("reason", 'prison time ended')
+    muteEmbed.setFooter(`auto unmute by daenerys`)
+    muteEmbed.setTimestamp();
+    message.channel.send(muteEmbed)
+  }, minutes * 60000); // time in ms
+}
+
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if (message.content.startsWith('~mute')) {
+        let noprefix = message.content.replace('~mute', '')
+        tempmute(noprefix);
+    }
+});
+
   client.login(process.env.BOT_TOKEN);
