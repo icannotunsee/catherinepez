@@ -1,12 +1,12 @@
 client.on('message', message => {
   let args = message.content.substring(PREFIX.length).split(" ");
   switch (args[0]) {
-  case: 'embed':
-      var emb = new MessageEmbed()
+    case 'embed':
+       var emb = new MessageEmbed()
           .setColor('#FFBCC9')
-          .setDescription(removed)
+          .setDescription(message)
       
-      message.channel.send(emb);
-      message.delete();
+       message.channel.send(emb);
+       message.delete();
   }
 });
