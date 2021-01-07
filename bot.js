@@ -120,7 +120,7 @@ function tempmute(message, args, prefix, client) {
   
 	if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you do not have permissions to imprison that person.");
 	if (!muteUser) return message.reply("i don't think that person is in our kingdom.");
-	if (!muteChannel) return message.reply("wrong channel.");
+	if (!muteChannel) return message.reply("log channel does not exist.");
 	if (!muteRole) return message.reply("there's no title called " + muterolename);
 	if (!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.reply("you do not have permissions to imprison that person.");
 
@@ -140,7 +140,8 @@ function tempmute(message, args, prefix, client) {
   	message.content.send(muteEmbed)
 
 	// You need to parse those arguments, I'll leave that to you.
-        muteUser.removeRoles(muteUser.roles).then.muteUser.roles.add(muteRole, `muted ${muteUser} for ${minutes} minutes. reason: ${muteReason}`);
+        muteUser.removeRoles(muteUser.roles);
+	muteUser.roles.add(muteRole, `muted ${muteUser} for ${minutes} minutes. reason: ${muteReason}`);
 
 	timeout(minutes, muteUser, muteRole, message) //time the mute
 }
