@@ -91,7 +91,7 @@ client.on('message', message => {
 });
 
 client.on('message', (message) => {
-  if (message.content.includes('discord.gg/'||'discordapp.com/invite/') && message.channel.id != '783175753771515904') {
+  if (message.content.includes('discord.gg/'||'discordapp.com/invite/') && !message.guild.member(message.author).hasPermission("MANAGE_CHANNELS") && message.channel.id != '783175753771515904') {
           let badMsg = message.content;
           let badMsgChan = message.guild.channels.cache.get(message.channel.id);
           let badMsgUser = message.author;
