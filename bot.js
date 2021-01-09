@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
+const { Client, Intents } = require("discord.js");
 
-const client = new BotClient();
+const client = new DiscordClient({
+  ws: { intents: Intents.ALL },
+});
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
