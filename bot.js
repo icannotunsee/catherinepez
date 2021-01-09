@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 const { Client, Intents } = require("discord.js");
 
-const client = new Discord.Client({
+const client = new Client({
   ws: { intents: Intents.ALL },
 });
 
