@@ -10,6 +10,7 @@ client.on('ready', () => {
 
 client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.id === '<a:GK_rotatingcrown:780890745678463046>') {
+        const guild = reaction.message.guild;
         const memberWhoReacted = guild.members.find(member => member.id === user.id);
         const emb = new MessageEmbed()
           .setColor('#FFBCC9')
@@ -17,7 +18,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
           .setFooter("boost us for a special role! <3")
         const roleid = '797248878821900289'
-        reaction.message.guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${memberWhoReacted}`, {embed: emb});
+        memberWhoReacted.guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${memberWhoReacted}`, {embed: emb});
     }
 });
 
