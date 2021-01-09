@@ -8,19 +8,18 @@ client.on('ready', () => {
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
 
-client.on('messageReactionAdd', async (reaction, user) => {
-    if (reaction.id === '<a:GK_rotatingcrown:780890745678463046>') {
-        const guild = reaction.message.guild;
-        const memberWhoReacted = guild.members.find(member => member.id === user.id);
-        const emb = new MessageEmbed()
-          .setColor('#FFBCC9')
-          .setTitle("welcome to __girls kingdom__ !!!")
-          .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
-          .setFooter("boost us for a special role! <3")
-        const roleid = '797248878821900289'
-        guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${memberWhoReacted}`, {embed: emb});
+exports.run = async (client, oldMember, newMember) => {
+        const messagechannel = msg.guild.channels.find('name', '🍥ﾐ・arrivals；♕');
+        if (oldMember.roles.size < newMember.roles.size) {
+            const emb = new MessageEmbed()
+                 .setColor('#FFBCC9')
+                 .setTitle("welcome to __girls kingdom__ !!!")
+                 .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
+                 .setFooter("boost us for a special role! <3")
+            }
+            messagechannel.send(` ${oldMember}`, {embed: emb);
+        }
     }
-});
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
