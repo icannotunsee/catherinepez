@@ -77,7 +77,7 @@ client.on('message', message => {
       let removed = message.content.replace('~embed', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
-          .setDescription(removed)
+          .setDescription("welcome to **girls kingdom** !!! \n ♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
       
       message.channel.send(emb);
       message.delete();
