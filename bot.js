@@ -1,8 +1,5 @@
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
-
-const client = new Discord.Client();
-
 const allIntents = Discord.Intents.all();
 const client = new Discord.Client({ intents: allIntents });
 
