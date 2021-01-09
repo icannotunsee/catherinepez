@@ -14,22 +14,8 @@ client.on('guildMemberAdd', member => {
           .setTitle("welcome to __girls kingdom__ !!!")
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
     const roleid = '797248878821900289'
-    member.guild.channels.get('780622165745467393').send(`<@&${roleid}> ${member}`, emb);
+    member.guild.channels.get('780902470657376298').send(`<@&${roleid}> ${member}` + {emb});
 });
-
-client.on('guildMemberAdd', member => {
-  client.on('message',
-    const args = message.content.split(" ").slice(1);
-    if(message.content.startsWith('~test') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-       const emb = new MessageEmbed()
-          .setColor('#FFBCC9')
-          .setTitle("welcome to __girls kingdom__ !!!")
-          .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
-    const roleid = '797248878821900289'
-    member.guild.channels.get('780622165745467393').send(`<@&${roleid}> ${member}`, emb);
-    }
-  )});
-
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
