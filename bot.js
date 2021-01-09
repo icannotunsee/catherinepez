@@ -14,7 +14,7 @@ client.on('guildMemberAdd', member => {
           .setTitle("welcome to __girls kingdom__ !!!")
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
     const roleid = '797248878821900289'
-    member.guild.channels.cache.get('780902470657376298').send(`${member}`, {emb});
+    member.guild.channels.cache.get('780902470657376298').send(`${member}`, {embed: emb});
 });
 
 client.on('message', message => {
