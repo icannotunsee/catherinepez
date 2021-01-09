@@ -17,6 +17,8 @@ client.on('messageReactionAdd', async (reaction, user) => {
           .setFooter("boost us for a special role! <3")
         const roleid = '797248878821900289'
         message.member.guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${message.member}`, {embed: emb});
+    }
+});
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
