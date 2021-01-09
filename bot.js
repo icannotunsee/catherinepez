@@ -18,7 +18,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
           .setFooter("boost us for a special role! <3")
         const roleid = '797248878821900289'
-        memberWhoReacted.guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${memberWhoReacted}`, {embed: emb});
+        guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${memberWhoReacted}`, {embed: emb});
     }
 });
 
