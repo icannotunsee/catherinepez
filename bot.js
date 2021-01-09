@@ -16,7 +16,6 @@ exports.run = async (client, oldMember, newMember) => {
                  .setTitle("welcome to __girls kingdom__ !!!")
                  .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
                  .setFooter("boost us for a special role! <3")
-            }
             messagechannel.send(` ${oldMember}`, {embed: emb);
         }
     }
