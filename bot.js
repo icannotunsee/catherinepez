@@ -8,14 +8,15 @@ client.on('ready', () => {
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
 
-client.on('guildMemberAdd', member => {
-    const emb = new MessageEmbed()
+client.on('messageReactionAdd', async (reaction, user) => {
+    if (reaction.id === '<a:GK_rotatingcrown:780890745678463046>') {
+        const emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setTitle("welcome to __girls kingdom__ !!!")
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
-    const roleid = '797248878821900289'
-    member.guild.channels.cache.get('780902470657376298').send(`${member}`, {embed: emb});
-});
+          .setFooter("boost us for a special role! <3")
+        const roleid = '797248878821900289'
+        message.member.guild.channels.cache.get('780902470657376298').send(`<@&${roleid}> ${message.member}`, {embed: emb});
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
