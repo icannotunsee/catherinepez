@@ -8,6 +8,13 @@ client.on('ready', () => {
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
 });
 
+client.on('guildMemberAdd', member => {
+    var emb = new MessageEmbed()
+          .setColor('#FFBCC9')
+          .setDescription("welcome to **girls kingdom** !!! \n ♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
+    member.guild.channels.get('780622165745467393').send(`<@&797248878821900289> ${member}` + emb); 
+});
+
   client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.startsWith('~say') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
