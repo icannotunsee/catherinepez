@@ -3,6 +3,9 @@ const { Client, MessageEmbed } = require('discord.js');
 
 const client = new Discord.Client();
 
+const allIntents = Discord.Intents.all();
+const client = new Discord.Client({ intents: allIntents });
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setActivity('girls kingdom', { type: 'WATCHING' });
