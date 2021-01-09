@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 
-const client = new Discord.Client({ ws: { intents: ['GUILD_PRESENCES', 'GUILD_MEMBERS'] }});
+const client = new Discord.Client({ ws: { intents: new Discord.Intents(Discord.Intents.ALL) }})
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
