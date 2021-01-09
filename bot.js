@@ -9,11 +9,12 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-    let emb = new MessageEmbed()
+    const emb = new MessageEmbed()
           .setColor('#FFBCC9')
           .setTitle("welcome to __girls kingdom__ !!!")
           .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
-    member.guild.channels.get('780622165745467393').send("<@&797248878821900289>" + `${member}` + emb);
+    const roleid = '797248878821900289'
+    member.guild.channels.get('780622165745467393').send(`<@&${roleid}> ${member}` + {emb});
 });
 
   client.on('message', message => {
