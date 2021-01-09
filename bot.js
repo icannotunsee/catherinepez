@@ -9,10 +9,11 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
-    var emb = new MessageEmbed()
+    let emb = new MessageEmbed()
           .setColor('#FFBCC9')
-          .setDescription("welcome to **girls kingdom** !!! \n ♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
-    member.guild.channels.get('780622165745467393').send(`<@&797248878821900289> ${member}` + emb); 
+          .setTitle("welcome to __girls kingdom__ !!!")
+          .setDescription("♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
+    member.guild.channels.get('780622165745467393').send("<@&797248878821900289>" + `${member}` + emb);
 });
 
   client.on('message', message => {
@@ -77,7 +78,7 @@ client.on('message', message => {
       let removed = message.content.replace('~embed', '')
       let emb = new MessageEmbed()
           .setColor('#FFBCC9')
-          .setDescription("welcome to **girls kingdom** !!! \n ♔ pick up roles in <#780600554308370442> \n ♔ read the FAQ in <#780600396284035095>")
+          .setDescription(removed)
       
       message.channel.send(emb);
       message.delete();
