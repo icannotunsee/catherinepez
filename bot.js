@@ -55,7 +55,7 @@ client.on('message', message => {
       || message.content.toLowerCase().includes("tranny") || message.content.toLowerCase().includes("fucktard") || message.content.toLowerCase().includes("niggas")
       || message.content.toLowerCase().includes("niggers") || message.content.toLowerCase().includes("faggots") || message.content.toLowerCase().includes("retards")
       || message.content.toLowerCase().includes("chinks") || message.content.toLowerCase().includes("trannies")
-      || message.content.toLowerCase().includes("dykes")) {
+      || message.content.toLowerCase().includes("dykes") || message.content.toLowerCase().includes("beaner")) {
        let badMsg = message.content;
        let badMsgChan = message.guild.channels.cache.get(message.channel.id);
        let badMsgUser = message.author;
