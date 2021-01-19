@@ -15,7 +15,7 @@ client.on('guildMemberAdd', member => {
           .setDescription("♔ pick up roles in <#780600554308370442> \n♔ read the FAQ in <#780600396284035095>")
           .setFooter("boost us for a special role! <3")
     const roleid = '797248878821900289'
-    member.guild.channels.cache.get('780601741614776330').send(`${member}`, {embed: emb});
+    member.guild.channels.cache.get('780601741614776330').send(`<@&roleid> ${member}`, {embed: emb});
 });
 
 
