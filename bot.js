@@ -77,6 +77,28 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if(message.content.toLowerCase().includes("kys") || message.content.toLowerCase().includes("kill yourself") || message.content.toLowerCase().includes("stfu")
+      || message.content.toLowerCase().includes("die")) {
+       let badMsg = message.content;
+       let badMsgChan = message.guild.channels.cache.get(message.channel.id);
+       let badMsgUser = message.author;
+       let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+
+       let log = new Discord.MessageEmbed()
+          .setColor('#ff3a71')
+          .setTitle("suspicious word used")
+          .addField("content", badMsg, true)
+          .addField("found in", badMsgChan, true)
+          .addField("sent by", badMsgUser, true)
+          .setFooter("the person was not warned and their message was not deleted.")
+          .setTimestamp()
+
+       logChan.send(log);
+    }
+  });
+
+client.on('message', message => {
   if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       let removed = message.content.replace('~embed', '')
       let emb = new MessageEmbed()
