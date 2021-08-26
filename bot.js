@@ -121,11 +121,9 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
           .setColor('#000000')
           .setDescription(`${member} thank you for having our server link in your status!`)
     
-    if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" ))) {
-        if (!newPresence.member.roles.cache.get(role.id)) {
+    if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" )) && (!newPresence.member.roles.cache.has(role)) {
              newPresence.member.roles.add(role);
              member.guild.channels.cache.get('841733954477883408').send({embed: emb});
-        }
     }
     else {
         if(member.roles.cache.get(role.id)) {
