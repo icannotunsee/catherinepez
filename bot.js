@@ -115,7 +115,6 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
     
     if (activities && (activities.state.includes( ".gg/unsee") || activities.state.includes("discord.gg/unsee" ))) {
              newPresence.member.roles.add(role);
-             member.guild.channels.cache.get('841733954477883408').send({embed: emb});
     }
     else {
         if(member.roles.cache.get(role.id)) {
