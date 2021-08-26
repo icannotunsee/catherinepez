@@ -121,7 +121,7 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
           .setDescription(`${member} thank you for having our server link in your status!`)
     
     if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" )) {
-        if (!newPresence.member.roles.has(role)) {
+        if (!newPresence.member.roles.cache.has(role.id)) {
              newPresence.member.roles.add(role);
              member.guild.channels.cache.get('841733954477883408').send({embed: emb});
         }
@@ -129,8 +129,8 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
     else {
         if(member.roles.cache.get(role.id)) {
              newPresence.member.roles.remove(role);
-        }
-         }
+          }
+       }
 });
 
 client.login(process.env.BOT_TOKEN);
