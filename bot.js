@@ -26,7 +26,7 @@ client.on('message', message => {
         var saytext = args.join(" ");
         message.channel.send(saytext);
     }
-  });
+});
 
 client.on('message', message => {
   const args = message.content.split(" ").slice(1);
@@ -36,7 +36,7 @@ client.on('message', message => {
       channel = client.channels.cache.get('841734680339939378');
       channel.send(saytext);
     }
-  });
+});
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
@@ -121,7 +121,7 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
           .setDescription(`${member} thank you for having our server link in your status!`)
     
     if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" ))) {
-        if (!newPresence.member.roles.cache.has(role)) {
+        if (!newPresence.member.roles.has(role)) {
              newPresence.member.roles.add(role);
              member.guild.channels.cache.get('841733954477883408').send({embed: emb});
         }
@@ -133,4 +133,4 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
          }
 });
 
-  client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
