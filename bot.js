@@ -38,6 +38,13 @@ client.on('message', message => {
     }
   });
 
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if (message.content.toLowercase().includes("italian") || message.content.toLowercase().includes("italians")) {
+        message.reply("italians aren't real");
+    }
+});
+
     
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
