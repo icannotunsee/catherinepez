@@ -117,10 +117,14 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
     const member = newPresence.member;
     const channel = client.channels.cache.get('841733954477883408')
     const activities = member.user.presence.activities[0];
+    const emb = new MessageEmbed()
+          .setColor('#000000')
+          .setDescription("thank you for putting our server link in your status, you now have the **influencers** role!")
+          .setFooter("discord.gg/unsee")
   
     if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" ))) {
         newPresence.member.roles.add(role)
-        member.guild.channels.cache.get('841733954477883408').send(`${member} thank you for putting our server link in your status!`);
+        member.guild.channels.cache.get('841733954477883408').send(`${member}`, {embed: emb});
     } else {
       if(member.roles.cache.get(role.id)) {
         newPresence.member.roles.remove(role)
