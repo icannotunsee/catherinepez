@@ -112,4 +112,18 @@ client.on('message', (message) => {
   }
 });
 
+client.on('presenceUpdate', async (oldPresence, newPresence) => {
+    const role = newPresence.guild.roles.cache.get("842135209569681478");
+    const member = newPresence.member
+    const activities = member.user.presence.activities[0];
+  
+    if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" ))) {
+      return newPresence.member.roles.add(role)
+    } else {
+      if(member.roles.cache.get(role.id)) {
+        newPresence.member.roles.remove(role)
+      }
+    }
+});
+
   client.login(process.env.BOT_TOKEN);
