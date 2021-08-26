@@ -5,17 +5,17 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity('girls kingdom', { type: 'WATCHING' });
+    client.user.setActivity('unsee.', { type: 'WATCHING' });
 });
 
 client.on('guildMemberAdd', member => {
     const emb = new MessageEmbed()
-          .setColor('#FFBCC9')
-          .setTitle("welcome to __girls kingdom__ !!!")
-          .setDescription("♔ pick up roles in <#780600554308370442> \n♔ read the FAQ in <#780600396284035095>")
+          .setColor('#000000')
+          .setTitle("welcome to __unsee.__ !!! <a:stick:879285927372009552>")
+          .setDescription("❆ read <#873011096200568903> \n❆ pick up roles in <#841733954477883405>")
           .setFooter("boost us for a special role! <3")
     const roleid = '797248878821900289'
-    member.guild.channels.cache.get('780601741614776330').send(`<@&${roleid}> ${member}`, {embed: emb});
+    member.guild.channels.cache.get('841733954477883408').send(`${member}`, {embed: emb});
 });
 
 
@@ -33,7 +33,7 @@ client.on('message', message => {
   if(message.content.startsWith('~announce') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       message.delete()
       var saytext = args.join(" ");
-      channel = client.channels.cache.get('780671823611428905');
+      channel = client.channels.cache.get('841734680339939378');
       channel.send(saytext);
     }
   });
@@ -43,7 +43,7 @@ client.on("message", message => {
     if (message.author.bot) return false;
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
     if (message.mentions.has(client.user.id)) {
-        message.reply("i can't do much. please ping <@566279767544823808> or an online staff member if there is an issue.");
+        message.reply("i can't do much. please ping a staff member if there is an issue.");
     }
   });
     
@@ -59,10 +59,10 @@ client.on('message', message => {
        let badMsg = message.content;
        let badMsgChan = message.guild.channels.cache.get(message.channel.id);
        let badMsgUser = message.author;
-       let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+       let logChan = message.guild.channels.cache.find(ch => ch.name === "・mods");
 
        let log = new Discord.MessageEmbed()
-          .setColor('#ff3a71')
+          .setColor('#000000')
           .setTitle("blacklisted word used")
           .addField("content", badMsg, true)
           .addField("found in", badMsgChan, true)
@@ -72,37 +72,16 @@ client.on('message', message => {
        logChan.send(log);
 
        message.delete();
-       message.reply("no derogatory words.");
+       message.reply("no slurs.");
     }
   });
 
-client.on('message', message => {
-    const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase().includes("kys") || message.content.toLowerCase().includes("kill yourself") || message.content.toLowerCase().includes("stfu")
-      || message.content.toLowerCase().includes("die")) {
-       let badMsg = message.content;
-       let badMsgChan = message.guild.channels.cache.get(message.channel.id);
-       let badMsgUser = message.author;
-       let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
-
-       let log = new Discord.MessageEmbed()
-          .setColor('#ff3a71')
-          .setTitle("suspicious word used")
-          .addField("content", badMsg, true)
-          .addField("found in", badMsgChan, true)
-          .addField("sent by", badMsgUser, true)
-          .setFooter("the person was not warned and their message was not deleted.")
-          .setTimestamp()
-
-       logChan.send(log);
-    }
-  });
 
 client.on('message', message => {
   if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
       let removed = message.content.replace('~embed', '')
       let emb = new MessageEmbed()
-          .setColor('#FFBCC9')
+          .setColor('#000000')
           .setDescription(removed)
       
       message.channel.send(emb);
@@ -110,25 +89,13 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-  if(message.content.startsWith('~embedpic') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
-      let removed = message.content.replace('~embedpic', '')
-      let emb = new MessageEmbed()
-          .setColor('#FFBCC9')
-          .setDescription(removed)
-          .setThumbnail('https://i.imgur.com/x5d9Qwq.jpg')
-      
-      message.channel.send(emb);
-      message.delete();
-  }
-});
 
 client.on('message', (message) => {
   if (message.content.includes('discord.gg/'||'discordapp.com/invite/') && !message.guild.member(message.author).hasPermission("MANAGE_CHANNELS") && message.channel.id != '783175753771515904') {
           let badMsg = message.content;
           let badMsgChan = message.guild.channels.cache.get(message.channel.id);
           let badMsgUser = message.author;
-          let logChan = message.guild.channels.cache.find(ch => ch.name === "queensguard");
+          let logChan = message.guild.channels.cache.find(ch => ch.name === "・mods");
 
           let log = new Discord.MessageEmbed()
             .setColor('#ff3a71')
