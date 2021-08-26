@@ -38,14 +38,6 @@ client.on('message', message => {
     }
   });
 
-client.on("message", message => {
-    const args = message.content.split(" ").slice(1);
-    if (message.author.bot) return false;
-    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
-    if (message.mentions.has(client.user.id)) {
-        message.reply("i can't do much. please ping a staff member if there is an issue.");
-    }
-  });
     
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
