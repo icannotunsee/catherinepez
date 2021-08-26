@@ -119,8 +119,7 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
     const activities = member.user.presence.activities[0];
     const emb = new MessageEmbed()
           .setColor('#000000')
-          .setDescription(`${member} thank you for putting our server link in your status, you now have the **influencers** role!`)
-          .setFooter("discord.gg/unsee")
+          .setDescription(`${member} thank you for having our server link in your status!`)
   
     if (activities && (activities.state.includes( ".gg/unsee" ) || activities.state.includes("discord.gg/unsee" ))) {
         newPresence.member.roles.add(role)
