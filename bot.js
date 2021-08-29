@@ -68,6 +68,14 @@ client.on('message', message => {
     }
   });
 
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if(message.content.toLowerCase().includes("beca")) {
+
+       message.react('841767978034921492')
+    }
+  });
+
 
 client.on('message', message => {
   if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
