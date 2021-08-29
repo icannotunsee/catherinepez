@@ -72,15 +72,7 @@ client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.toLowerCase().includes("beca")) {
 
-       message.react('841767978034921492')
-    }
-  });
-
-client.on('message', message => {
-    const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy")) {
-
-       message.reply("italians aren't real.")
+       message.react('841767978034921492');
     }
   });
 
