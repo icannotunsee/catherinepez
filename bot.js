@@ -70,10 +70,9 @@ client.on('message', message => {
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    let user = message.guild.members.cache.fetch("880481604101898261");
-    if(!user && (message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy"))) {
+    if(!message.author.bot && (message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy"))) {
 
-       message.reply("italians aren't real.");
+       message.reply("italians aren't real.")
     }
   });
 
@@ -81,7 +80,7 @@ client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.toLowerCase().includes("beca")) {
 
-       message.react('841767978034921492');
+       message.react('841767978034921492')
     }
   });
 
