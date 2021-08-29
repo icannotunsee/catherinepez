@@ -76,6 +76,14 @@ client.on('message', message => {
     }
   });
 
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if(message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy")) {
+
+       message.reply("italians aren't real.")
+    }
+  });
+
 
 client.on('message', message => {
   if(message.content.startsWith('~embed') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
