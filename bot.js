@@ -55,7 +55,7 @@ client.on('message', message => {
 
        let log = new Discord.MessageEmbed()
           .setColor('#000000')
-          .setTitle("blacklisted word used")
+          .setTitle("slur used")
           .addField("content", badMsg, true)
           .addField("found in", badMsgChan, true)
           .addField("sent by", badMsgUser, true)
