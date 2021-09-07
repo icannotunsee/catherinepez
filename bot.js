@@ -81,7 +81,8 @@ client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.toLowerCase().includes("welcome") || message.content.toLowerCase().includes("welc")) {
 
-       message.react('884246677245034546')
+       message.react('884246677245034546');
+       message.react('884610892233322496');
     }
   });
 
