@@ -76,11 +76,12 @@ client.on('message', message => {
     }
   });
 
+
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
-    if(message.content.toLowerCase().includes("beca")) {
+    if(message.content.toLowerCase().includes("welcome") || message.content.toLowerCase().includes("welc")) {
 
-       message.react('841767978034921492')
+       message.react('884246677245034546')
     }
   });
 
