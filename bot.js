@@ -145,7 +145,7 @@ client.on("messageReactionAdd", (reaction, user) => {
 
     const message = reaction.message;
 
-    let upvoteLimit = 1;
+    let upvoteLimit = 3;
     // Number of reactions needed to be cast by the users (including the bot itself)
     // in order for the image to be sent to another channel.
     
