@@ -145,7 +145,7 @@ client.on("messageReactionAdd", (reaction, user) => {
 
     const message = reaction.message;
 
-    let upvoteLimit = 1;
+    let upvoteLimit = 3;
     // Number of reactions needed to be cast by the users (including the bot itself)
     // in order for the image to be sent to another channel.
     
@@ -155,13 +155,13 @@ client.on("messageReactionAdd", (reaction, user) => {
     let msg = new Discord.MessageEmbed()
           .setColor('#000000')
           .setAuthor(funnyUser.tag, funnyUser.avatarURL())
-          .addDescription(funnymessage)
+          .setDescription(funnymessage)
           .setTimestamp()
 
     
     if (reaction.emoji.name == "💀" && reaction.count >= upvoteLimit) {
-        const channel = message.guild.channels.cache.find(ch => ch.name === "unseeboard");
-        channel.send(msg);
+        const chanl = message.guild.channels.cache.find(ch => ch.name === "unseeboard");
+        chanl.send(msg);
     }
 
 });
