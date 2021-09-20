@@ -158,10 +158,14 @@ client.on("messageReactionAdd", (reaction, user) => {
           .setDescription(funnymessage)
           .setTimestamp()
 
+    if (message.reactions.cache.some(re => re.emoji.name === ":unseeface:" && re.users.cache.has(client.user.id))) {
+        return;
+    }
     
     if (reaction.emoji.name == "💀" && reaction.count >= upvoteLimit) {
         const chanl = message.guild.channels.cache.find(ch => ch.name === "unseeboard");
         chanl.send(msg);
+        message.react(":unseeface:");
     }
 
 });
