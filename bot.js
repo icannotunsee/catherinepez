@@ -70,6 +70,15 @@ client.on('message', message => {
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
+    if(message.content.toLowerCase().includes("twinem")) {
+
+       message.delete();
+       message.reply("no.");
+    }
+  });
+
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
     if(!message.author.bot && (message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy"))) {
 
        message.reply("italians aren't real.")
