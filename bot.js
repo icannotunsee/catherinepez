@@ -155,8 +155,6 @@ client.on("messageReactionAdd", (reaction, user) => {
     const message = reaction.message;
 
     let upvoteLimit = 3;
-    // Number of reactions needed to be cast by the users (including the bot itself)
-    // in order for the image to be sent to another channel.
     
     let funnymessage = message.content;
     let funnyUser = message.author;
@@ -173,6 +171,10 @@ client.on("messageReactionAdd", (reaction, user) => {
     
     if (reaction.emoji.name == "💀" && reaction.count >= upvoteLimit) {
         const chanl = message.guild.channels.cache.find(ch => ch.name === "unseeboard");
+        if (message.attachment.size > 0)
+        {
+            msg.setImage(message.attachment.first().url);
+        }    
         chanl.send(msg);
         message.react('841767978034921492');
     }
