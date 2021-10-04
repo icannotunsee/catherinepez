@@ -154,7 +154,7 @@ client.on("messageReactionAdd", (reaction, user) => {
 
     const message = reaction.message;
 
-    let upvoteLimit = 3;
+    let upvoteLimit = 1;
     
     let funnymessage = message.content;
     let funnyUser = message.author;
