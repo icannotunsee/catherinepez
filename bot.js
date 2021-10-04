@@ -171,9 +171,10 @@ client.on("messageReactionAdd", (reaction, user) => {
     
     if (reaction.emoji.name == "💀" && reaction.count >= upvoteLimit) {
         const chanl = message.guild.channels.cache.find(ch => ch.name === "unseeboard");
-        if (message.attachment.size > 0)
+        if (message.attachments.size > 0)
         {
-            msg.setImage(message.attachment.first().url);
+            const url = message.attachments.first().url;
+            msg.setImage(url);
         }    
         chanl.send(msg);
         message.react('841767978034921492');
