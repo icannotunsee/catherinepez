@@ -79,6 +79,13 @@ client.on('message', message => {
 
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
+    if((message.content == 'I am missing the permission to add reactions to a message') && message.author.bot) {
+       message.delete();
+    }
+  });
+
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
     if(!message.author.bot && (message.content.toLowerCase().includes("italian") || message.content.toLowerCase().includes("italians") || message.content.toLowerCase().includes("italy"))) {
 
        message.reply("italians aren't real.")
