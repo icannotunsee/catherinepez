@@ -47,7 +47,7 @@ client.on('message', message => {
       || message.content.toLowerCase().includes("tranny") || message.content.toLowerCase().includes("fucktard") || message.content.toLowerCase().includes("niggas")
       || message.content.toLowerCase().includes("niggers") || message.content.toLowerCase().includes("faggots") || message.content.toLowerCase().includes("retards")
       || message.content.toLowerCase().includes("chinks") || message.content.toLowerCase().includes("trannies")
-      || message.content.toLowerCase().includes("dykes") || message.content.toLowerCase().includes("beaner")) {
+      || message.content.toLowerCase().includes("dykes") || message.content.toLowerCase().includes("beaner") || message.content.toLowerCase().includes("sped")) {
        let badMsg = message.content;
        let badMsgChan = message.guild.channels.cache.get(message.channel.id);
        let badMsgUser = message.author;
@@ -65,6 +65,27 @@ client.on('message', message => {
 
        message.delete();
        message.reply("no slurs.");
+    }
+  });
+
+client.on('message', message => {
+    const args = message.content.split(" ").slice(1);
+    if(message.content.toLowerCase().includes("special ed") || message.content.toLowerCase().includes("kys") || message.content.toLowerCase().includes("die")
+      || message.content.toLowerCase().includes("tw") || message.content.toLowerCase().includes("fat")) {
+       let badMsg = message.content;
+       let badMsgChan = message.guild.channels.cache.get(message.channel.id);
+       let badMsgUser = message.author;
+       let logChan = message.guild.channels.cache.find(ch => ch.name === "・blacklisted");
+
+       let log = new Discord.MessageEmbed()
+          .setColor('#000000')
+          .setTitle("blacklisted word used")
+          .addField("content", badMsg, true)
+          .addField("found in", badMsgChan, true)
+          .addField("sent by", badMsgUser, true)
+          .setTimestamp()
+
+       logChan.send(log);
     }
   });
 
