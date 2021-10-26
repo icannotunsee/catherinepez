@@ -221,83 +221,194 @@ client.on('presenceUpdate', async (oldPresence, newPresence) => {
     const black = newPresence.guild.roles.cache.get(“902565378981519400”);
 
     if (newPresence.member.roles.cache.has(red)) {
-	    newPresence.member.roles.remove(hot);
-	    newPresence.member.roles.remove(pink);
-	    newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-    	newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(hot)) {
-    	newPresence.member.roles.remove(red);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-    	newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(pink)) {
-    	newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(red);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-    	newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(peach)) {
-	    newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(red);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-    	newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(green)) {
-    	newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(red);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-	    newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(blue)) {
-    	newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(red);
-       	newPresence.member.roles.remove(purple);
-	    newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
 
     else if (newPresence.member.roles.cache.has(purple)) {
-    	newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(red);
-    	newPresence.member.roles.remove(black);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
+	    if (newPresence.member.roles.cache.has(black)) {
+		    newPresence.member.roles.remove(black);
+	    }
     }
-
     else if (newPresence.member.roles.cache.has(black)) {
-    	newPresence.member.roles.remove(hot);
-    	newPresence.member.roles.remove(pink);
-    	newPresence.member.roles.remove(peach);
-    	newPresence.member.roles.remove(green);
-    	newPresence.member.roles.remove(blue);
-    	newPresence.member.roles.remove(purple);
-    	newPresence.member.roles.remove(red);
+	    if (newPresence.member.roles.cache.has(hot)) {
+		    newPresence.member.roles.remove(hot);
+	    }
+	    if (newPresence.member.roles.cache.has(pink)) {
+		    newPresence.member.roles.remove(pink);
+	    }
+	    if (newPresence.member.roles.cache.has(peach)) {
+		    newPresence.member.roles.remove(peach);
+	    }
+	    if (newPresence.member.roles.cache.has(green)) {
+		    newPresence.member.roles.remove(green);
+	    }
+	    if (newPresence.member.roles.cache.has(blue)) {
+		    newPresence.member.roles.remove(blue);
+	    }
+	    if (newPresence.member.roles.cache.has(purple)) {
+		    newPresence.member.roles.remove(purple);
+	    }
+	    if (newPresence.member.roles.cache.has(red)) {
+		    newPresence.member.roles.remove(red);
+	    }
     }
 });
 
