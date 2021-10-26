@@ -1,6 +1,10 @@
-const Discord = require('discord.js');
+const { Discord, Intents } = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 
+const myIntents = new Intents();
+myIntents.add(Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS);
+
+const clientintent = new Discord({ intents: myIntents });
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -210,7 +214,7 @@ client.on("messageReactionAdd", (reaction, user) => {
 
 });
 
-client.on('presenceUpdate', async (oldPresence, newPresence) => {
+clientintent.on('presenceUpdate', async (oldPresence, newPresence) => {
     const red = newPresence.guild.roles.cache.get(“902564626473041970”);
     const hot = newPresence.guild.roles.cache.get(“902563712139939890”);
     const pink = newPresence.guild.roles.cache.get(“902563463480635412”);
