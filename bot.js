@@ -210,4 +210,95 @@ client.on("messageReactionAdd", (reaction, user) => {
 
 });
 
+client.on('presenceUpdate', async (oldPresence, newPresence) => {
+    const red = newPresence.guild.roles.cache.get(“902564626473041970”);
+    const hot = newPresence.guild.roles.cache.get(“902563712139939890”);
+    const pink = newPresence.guild.roles.cache.get(“902563463480635412”);
+    const peach = newPresence.guild.roles.cache.get(“902563254663016488”);
+    const green = newPresence.guild.roles.cache.get(“902564227137568878”);
+    const blue = newPresence.guild.roles.cache.get(“902564955168051230”);
+    const purple = newPresence.guild.roles.cache.get(“902563196496412753”);
+    const black = newPresence.guild.roles.cache.get(“902565378981519400”);
+
+    if (newPresence.member.roles.cache.has(red)) {
+	    newPresence.member.roles.remove(hot);
+	    newPresence.member.roles.remove(pink);
+	    newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+    	newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(hot)) {
+    	newPresence.member.roles.remove(red);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+    	newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(pink)) {
+    	newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(red);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+    	newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(peach)) {
+	    newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(red);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+    	newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(green)) {
+    	newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(red);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+	    newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(blue)) {
+    	newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(red);
+       	newPresence.member.roles.remove(purple);
+	    newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(purple)) {
+    	newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(red);
+    	newPresence.member.roles.remove(black);
+    }
+
+    else if (newPresence.member.roles.cache.has(black)) {
+    	newPresence.member.roles.remove(hot);
+    	newPresence.member.roles.remove(pink);
+    	newPresence.member.roles.remove(peach);
+    	newPresence.member.roles.remove(green);
+    	newPresence.member.roles.remove(blue);
+    	newPresence.member.roles.remove(purple);
+    	newPresence.member.roles.remove(red);
+    }
+});
+
 client.login(process.env.BOT_TOKEN);
