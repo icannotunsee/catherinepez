@@ -11,8 +11,8 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
     const emb = new MessageEmbed()
           .setColor('#000000')
-          .setTitle("welcome to __unsee.__ !!! <a:stick:879285927372009552>")
-          .setDescription("❂ read <#873011096200568903> \n❂ pick up roles in <#841733954477883405>")
+          .setTitle("welcome to __unsee.__ !!! <a:robloxblink:879285930895233034>")
+          .setDescription("・read <#895160744159629322> & <#902936482598240257> \n・pick up roles in <#841733954477883405>")
           .setFooter("boost us for a special role! <3")
     const roleid = '797248878821900289'
     member.guild.channels.cache.get('841733954477883408').send(`${member}`, {embed: emb});
