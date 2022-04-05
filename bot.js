@@ -8,17 +8,6 @@ client.on('ready', () => {
     client.user.setActivity('unsee.', { type: 'WATCHING' });
 });
 
-client.on('guildMemberAdd', member => {
-    const emb = new MessageEmbed()
-          .setColor('#000000')
-          .setTitle("welcome to __unsee.__ !!! <a:robloxblink:879285930895233034>")
-          .setDescription("・read <#895160744159629322> & <#902936482598240257> \n・pick up roles in <#841733954477883405>")
-          .setFooter("boost us for a special role! <3")
-    const roleid = '797248878821900289'
-    member.guild.channels.cache.get('841733954477883408').send(`${member}`, {embed: emb});
-});
-
-
 client.on('message', message => {
     const args = message.content.split(" ").slice(1);
     if(message.content.startsWith('~say') && message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) {
